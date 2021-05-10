@@ -7,7 +7,8 @@ namespace pandemic{
     {
 
         public:
-            Dispatcher(Board board, City city) : Player(board, city){};
+            Dispatcher(Board& board, City city) : Player(board, city){};
             Player& fly_direct(City dest);
+            string role();
     };
 };

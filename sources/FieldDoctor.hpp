@@ -7,7 +7,8 @@ namespace pandemic{
     {
 
         public:
-            FieldDoctor(Board board, City city) : Player(board, city){};
+            FieldDoctor(Board& board, City city) : Player(board, city){};
             Player& treat(City dest);
+            string role();
     };
 };

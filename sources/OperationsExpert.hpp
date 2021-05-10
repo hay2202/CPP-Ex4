@@ -7,8 +7,9 @@ namespace pandemic{
     {
 
         public:
-            OperationsExpert(Board board, City city) : Player(board, city){};
+            OperationsExpert(Board& board, City city) : Player(board, city){};
             Player& build();
+            string role();
     };
 
 

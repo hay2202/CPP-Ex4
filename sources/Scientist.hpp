@@ -9,7 +9,8 @@ namespace pandemic{
             int num_cards;
 
         public:
-            Scientist(Board board, City city, int n=4) : Player(board, city), num_cards(n){};
+            Scientist(Board& board, City city, int n=4) : Player(board, city), num_cards(n){};
             Player& discover_cure(Color color);
+            string role();
     };
 };
