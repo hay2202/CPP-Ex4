@@ -9,7 +9,7 @@ using namespace std;
 #include "Board.hpp"
 #include <set>
 #include <stdexcept>
-
+#define MIN_CARDS 5
 
 namespace pandemic{
     class Player{

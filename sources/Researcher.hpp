@@ -7,7 +7,7 @@ namespace pandemic{
     {
         public:
             Researcher(Board& board, City city) : Player(board, city){};
-            Player& discover_cure(Color color);
-            string role();
+            Player& discover_cure(Color color)override;
+            string role()override;
     };
 };

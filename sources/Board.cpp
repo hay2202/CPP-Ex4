@@ -35,7 +35,7 @@ using namespace pandemic;
         Board::all_cities[City::London] = {City::NewYork ,City::Madrid ,City::Essen ,City::Paris};
         Board::all_cities[City::LosAngeles]  = {City::SanFrancisco ,City::Chicago ,City::MexicoCity, City::Sydney};
         Board::all_cities[City::Madrid]= {City::London ,City::NewYork, City::Paris, City::SaoPaulo ,City::Algiers};
-        Board::all_cities[City::Manila] = {City::Taipei, City::SanFrancisco ,City::HoChiMinhCity ,City::Sydney};
+        Board::all_cities[City::Manila] = {City::Taipei, City::SanFrancisco ,City::HoChiMinhCity ,City::Sydney,City::HongKong};
         Board::all_cities[City::MexicoCity]  = {City::LosAngeles, City::Chicago ,City::Miami ,City::Lima, City::Bogota};
         Board::all_cities[City::Miami] = {City::Atlanta ,City::MexicoCity, City::Washington ,City::Bogota};
         Board::all_cities[City::Milan] = {City::Essen ,City::Paris ,City::Istanbul};
@@ -63,7 +63,7 @@ using namespace pandemic;
         Board::city_by_color[City::Atlanta] = Color::Blue;
         Board::city_by_color[City::Baghdad] = Color::Black;
         Board::city_by_color[City::Bangkok] = Color::Red;
-        Board::city_by_color[City::Beijing] = Color::Yellow;
+        Board::city_by_color[City::Beijing] = Color::Red;
         Board::city_by_color[City::Bogota] =Color::Yellow;
         Board::city_by_color[City::BuenosAires] = Color::Yellow;
         Board::city_by_color[City::Cairo] = Color::Black;
@@ -229,7 +229,7 @@ using namespace pandemic;
     }
     
     void Board ::remove_cures(){
-        disease_level.clear();
+        cure.clear();
     }
 
     void Board::remove_stations(){

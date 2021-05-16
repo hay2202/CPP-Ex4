@@ -11,9 +11,6 @@ using namespace std;
 
 namespace pandemic{
     class Board{
-        private:
-            int num;
-
         public:
             Board();
             static map<City,vector<City>> all_cities;
@@ -26,7 +23,7 @@ namespace pandemic{
             void remove_stations();
             int& operator[] (City city);
             friend std::ostream& operator<< (std::ostream& os,const Board& x);
-            void init_map();
+            static void init_map();
             static string enum_to_string(City c);
 
     };

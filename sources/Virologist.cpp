@@ -4,9 +4,9 @@ using namespace std;
 using namespace pandemic;
 
 Player& Virologist::treat(City dest){
-    if (player_board.disease_level[dest] > 0 )
+    if (player_board.disease_level[dest] > 0  && (my_cards.count(dest) > 0 || dest == current_city))
     {
-        Color temp = player_board.city_by_color.at(dest);
+       Color temp = Board::city_by_color.at(dest);
        if (player_board.cure.count(temp) > 0)
        {
            player_board.disease_level[dest] = 0;

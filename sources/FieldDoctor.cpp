@@ -4,12 +4,17 @@ using namespace std;
 using namespace pandemic;
 
 Player& FieldDoctor::treat(City dest){
+    if (dest == current_city)
+    {
+        Player::treat(dest);
+        return *this;
+    }  
     if (player_board.disease_level[dest] > 0 )
     {
-        for (auto& i : player_board.all_cities[current_city]){
+        for (auto& i : Board::all_cities[current_city]){
             if (dest == i)
             {
-                Color temp = player_board.city_by_color.at(dest);
+                Color temp = Board::city_by_color.at(dest);
                 if (player_board.cure.count(temp) > 0)
                 {
                     player_board.disease_level[dest] = 0;
@@ -18,11 +23,11 @@ Player& FieldDoctor::treat(City dest){
                 {
                         player_board.disease_level[dest]--;
                 }
-                return *this;
+                return *this; 
             }
         }
     }
-    throw std::out_of_range{"illegal action! \n"};
+    throw std::out_of_range{"disease doesn't exist! \n"};    
 }
 
 string FieldDoctor::role(){
