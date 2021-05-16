@@ -25,6 +25,7 @@ namespace pandemic{
             friend std::ostream& operator<< (std::ostream& os,const Board& x);
             static void init_map();
             static string enum_to_string(City c);
+            static string print_color(Color c);
 
     };
 };

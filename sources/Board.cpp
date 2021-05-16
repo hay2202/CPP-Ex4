@@ -213,6 +213,22 @@ using namespace pandemic;
         }
     }
 
+string print_color(Color c){
+    switch (c)
+    {
+    case Color::Black:
+        return "Black";
+    case Color::Blue:
+        return "Blue";
+    case Color::Red:
+        return "Red";
+    case Color::Yellow:
+        return "Yellow";
+    
+    default:
+        break;
+    }
+}
   Board::Board(){
         init_map();
     }
@@ -244,15 +260,15 @@ using namespace pandemic;
     ostream& pandemic::operator<< (std::ostream& os ,const Board& x){
         os << "Disease Level:\n";
         for (auto i : x.disease_level){
-            os << " City: " << Board::enum_to_string(i.first) << " disease level: " << i.second << endl;
+            os << " City: " << Board::enum_to_string(i.first) << "  ,disease level: " << i.second << endl;
         }
         os << "\nResearch Station:\n";
         for (auto i : x.station){
             os << Board::enum_to_string(i) << endl;
         }
-        os << "\n Stations:\n";
-        for (auto i : x.station){
-            os << Board::enum_to_string(i) << endl;
+        os << "\nCures:\n";
+        for (auto i : x.cure){
+            os  << print_color(i) << endl;
         }
         return os;  
     }
